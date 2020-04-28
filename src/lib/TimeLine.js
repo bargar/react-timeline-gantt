@@ -28,11 +28,17 @@ class TimeLine extends Component {
     let dayWidth = this.getDayWidth(this.props.mode);
     Config.load(this.props.config);
     //Initialising state
+
+    // optionally shift initial viewport horizontal position
+    // default behavior: first day on left is today
+    const initialDaysOffset = props.initialDaysOffset || 0;
+    const nowposition = initialDaysOffset * dayWidth * -1;
+
     this.state = {
       currentday: 0, //Day that is in the 0px horizontal
       //nowposition is the reference position, this variable support the infinit scrolling by accumulatning scroll times and redefining the 0 position
       // if we accumulat 2 scroll to the left nowposition will be 2* DATA_CONTAINER_WIDTH
-      nowposition: 0,
+      nowposition,
       startRow: 0, //
       endRow: 10,
       sideStyle: { width: 200 },
