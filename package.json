@@ -8,6 +8,8 @@
     "prod": "webpack --mode production --open --config webpack.config.prod.js ",
     "prodser": "webpack-dev-server  --mode production --open --config webpack.config.prod.js ",
     "build": "webpack --mode production  --config webpack.config.build.js",
+    "dev": "webpack --mode development  --config webpack.config.build.js",
+    "devmon": "nodemon --watch ./src  -x \"yarn run dev\"",
     "lint": "eslint src",
     "test": "jest && codecov",
     "prepublish": "rm -rf ./dist && npm run build",
@@ -51,8 +53,6 @@
     "jest-junit": "^5.0.0",
     "json-loader": "^0.5.7",
     "merge": ">=1.2.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
     "react-test-renderer": "^16.4.0",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
@@ -78,6 +78,7 @@
   "dependencies": {
     "jest-config": "^25.1.0",
     "moment": "^2.24.0",
+    "nodemon": "^2.0.3",
     "opencollective": "^1.0.3",
     "opencollective-postinstall": "^2.0.1",
     "react-sizeme": "^2.5.2"
