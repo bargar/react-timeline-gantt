@@ -62,10 +62,11 @@ export default class TaskList extends Component {
     const groups = Registry.groupData(data, this.props.startRow, this.props.endRow + 1);
     Object.keys(groups).forEach((key, i) => {
       const group = groups[key];
-      group.forEach(item => {
+      group.forEach((item, j) => {
+        const taskKey = `${i}:${j}`;
         result.push(
           <TaskRow
-            key={i + item.id}
+            key={taskKey}
             index={item.name + i}
             item={item}
             label={key}
