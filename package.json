@@ -13,7 +13,8 @@
     "lint": "eslint src",
     "test": "jest && codecov",
     "prepublish": "rm -rf ./dist && npm run build",
-    "postinstall": "opencollective-postinstall"
+    "postinstall": "opencollective-postinstall",
+    "prepare": "webpack --mode production  --config webpack.config.build.js"
   },
   "peerDependencies": {
     "css-layout": "^1.1.1",
