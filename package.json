@@ -9,7 +9,7 @@
     "prodser": "webpack-dev-server  --mode production --open --config webpack.config.prod.js ",
     "build": "webpack --mode production  --config webpack.config.build.js",
     "dev": "webpack --mode development  --config webpack.config.build.js",
-    "devmon": "nodemon --watch ./src  -x \"yarn run dev\"",
+    "devmon": "nodemon -e js,css --watch ./src  -x \"yarn run dev\"",
     "lint": "eslint src",
     "test": "jest && codecov",
     "prepublish": "rm -rf ./dist && npm run build",
