@@ -41,7 +41,7 @@ class TimeLine extends Component {
       nowposition,
       startRow: 0, //
       endRow: 10,
-      sideStyle: { width: 200 },
+      sideStyle: { width: props.taskListWidth },
       scrollLeft: 0,
       scrollTop: 0,
       numVisibleRows: 40,
@@ -414,14 +414,16 @@ TimeLine.propTypes = {
   itemheight: PropTypes.number.isRequired,
   dayWidth: PropTypes.number.isRequired,
   nonEditableName: PropTypes.bool,
-  showSplitter: PropTypes.bool
+  showSplitter: PropTypes.bool,
+  taskListWidth: PropTypes.number
 };
 
 TimeLine.defaultProps = {
   itemheight: 20,
   dayWidth: 24,
   nonEditableName: false,
-  showSplitter: true
+  showSplitter: true,
+  taskListWidth: 200
 };
 
 export default TimeLine;
