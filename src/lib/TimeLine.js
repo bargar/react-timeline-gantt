@@ -329,7 +329,7 @@ class TimeLine extends Component {
       console.log(this.state)
     }
     return (
-      <div className="timeLine">
+      <div className={`timeLine ${this.props.className}`}>
         <div className="timeLine-side-main" style={this.state.sideStyle}>
           <TaskList
             ref="taskViewPort"
@@ -415,7 +415,8 @@ TimeLine.propTypes = {
   dayWidth: PropTypes.number.isRequired,
   nonEditableName: PropTypes.bool,
   showSplitter: PropTypes.bool,
-  taskListWidth: PropTypes.number
+  taskListWidth: PropTypes.number,
+  className: PropTypes.string
 };
 
 TimeLine.defaultProps = {
