@@ -343,7 +343,7 @@ class TimeLine extends Component {
             onScroll={this.verticalChange}
             nonEditable={this.props.nonEditableName}
           />
-          <VerticalSpliter onTaskListSizing={this.onTaskListSizing} />
+          {this.props.showSplitter && <VerticalSpliter onTaskListSizing={this.onTaskListSizing} />}
         </div>
         <div className="timeLine-main">
           <Header
@@ -413,13 +413,15 @@ class TimeLine extends Component {
 TimeLine.propTypes = {
   itemheight: PropTypes.number.isRequired,
   dayWidth: PropTypes.number.isRequired,
-  nonEditableName: PropTypes.bool
+  nonEditableName: PropTypes.bool,
+  showSplitter: PropTypes.bool
 };
 
 TimeLine.defaultProps = {
   itemheight: 20,
   dayWidth: 24,
-  nonEditableName: false
+  nonEditableName: false,
+  showSplitter: true
 };
 
 export default TimeLine;
