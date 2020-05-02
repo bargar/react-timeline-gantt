@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import moment from 'moment';
+import * as moment from "moment/moment.js"
 import { BUFFER_DAYS, DATA_CONTAINER_WIDTH } from 'libs/Const';
 import { VIEW_MODE_DAY, VIEW_MODE_WEEK, VIEW_MODE_MONTH, VIEW_MODE_YEAR } from 'libs/Const';
 import Config from 'libs/helpers/config/Config';
